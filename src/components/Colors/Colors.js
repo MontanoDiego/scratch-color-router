@@ -1,13 +1,27 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 export default function Colors() {
   const { r, g, b } = useParams();
-  const color = `rgb(${r}, ${g}, ${b})`;
+  const history = useHistory();
+  
+  const rCheck = Number(r);
+  const gCheck = Number(g);
+  const bCheck = Number(b);
+  
+  const color = `rgb(${rCheck}, ${gCheck}, ${bCheck})`;
 
-  return (
-    <div className='color' style={{ backgroundColor: color, height: '500px', width: '500px' }}>
-      <h2>{color}</h2>
-    </div>
-  );
+  if (isNaN(rCheck) || isNaN(gCheck) || isNaN(bCheck)) {
+    history.push('/404');
+  } else {
+    return (
+      <div className='color' style={{ 
+        backgroundColor: color, 
+        height: '500px', 
+        width: '500px' }}>
+  
+        <h2>{color}</h2>
+      </div>
+    );
+  }
 }
