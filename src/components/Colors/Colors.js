@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import './Colors.css';
 
 export default function Colors() {
   const { r, g, b } = useParams();
@@ -18,9 +19,10 @@ export default function Colors() {
       <div className='color' style={{ 
         backgroundColor: color, 
         height: '500px', 
-        width: '500px' }}>
+        width: '500px'
+      }}>
   
-        <h2>{color}</h2>
+        <h2 className='color'>{color}</h2>
       </div>
     );
   }

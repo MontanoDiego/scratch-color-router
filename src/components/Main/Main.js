@@ -9,19 +9,19 @@ export default function Main() {
     <BrowserRouter>
       <div className='container'>
         <div className='link-container'>
-          <Link to='/255/0/0'>
-            <h1>RED</h1>
+          <Link to='/255/172/228' style={{ textDecoration: 'none' }} >
+            <h1 className='pink'>PINK</h1>
           </Link>
-          <Link to='/0/255/0'>
-            <h1>GREEN</h1>
+          <Link to='/171/135/255' style={{ textDecoration: 'none' }} >
+            <h1 className='purple'>PURPLE</h1>
           </Link>
-          <Link to='/0/0/255'>
-            <h1>BLUE</h1>
+          <Link to='/171/255/255' style={{ textDecoration: 'none' }} >
+            <h1 className='blue'>BLUE</h1>
           </Link>
         </div>
         <Switch>
           <Route exact path="/" >
-            <Redirect to="/255/0/0" />
+            <Redirect to="/171/255/255" />
           </Route>
           <Route path='/:r/:g/:b' component={Colors} />
           <Route path="*" component={NotFound} />
